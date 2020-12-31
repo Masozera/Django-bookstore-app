@@ -1,0 +1,16 @@
+{% extends '_base.html' %}  
+{% load crispy_forms_tags %}  {% comment %}  To use Crispy Forms we load crispy_forms_tags at the top of a template and add {{form|crispy }} to replace {{ form.as_p}} for displaying form fields {% endcomment %}
+
+{% block title %}Sign Up{% endblock title %}
+
+{% block content %}
+
+<h2>Sign Up</h2>
+<form method="post">
+{% csrf_token %}
+{% comment %} {{ form.as_p }} {% endcomment %}
+{{ form|crispy }}
+<button class="btn btn-success"  type="submit">Sign Up</button>
+</form>
+
+{% endblock content %}
